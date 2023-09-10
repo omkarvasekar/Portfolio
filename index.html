@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio
+
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Space+Grotesk&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/20088fbc0e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <!-- <img src="images/logo.jpg" class="logo"> -->
+                <h1 class="code"> &lt; / &gt;</h1>
+                <ul id="side-menu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Interests</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>
+                    CS UnderGrad
+                </p>
+                <h1><span>Omkar Vasekar</span><br>Where Ideas Come To Life.</h1>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1"><img src="images/omkar.jpg"></div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About Me</h1>
+                    <p style="  line-height: 130%;">
+                        Hello there!! I am a tech enthusiast exploring various technologies and also trying to implement them to solve real life problems.Currently I am trying to learn various programming languages such as Python, C++, Kotlin ,etc.
+                        I am also currently into full stack web development. I am also into Machine Learning.I consider myself pretty good at Problem Solving.I am also curious about the different current affairs across the globe. I get along with people from different backgrounds easily and for me communication is never a barrier. Just want to make World A Better Place!
+                    </p>
+                    <div class="tab-title">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience </p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>AI/ML</span><br>Making Predictors, Classifiers using various algorithms </li>
+                            <li><span>MERN stack </span><br>Making Full stack Web App </li>
+                            <li><span>DSA </span><br>Solving DSA in CPP </li>
+                            <li><span>Languages </span><br>Python(Intermediate) , C++(Intermediate), C (Intermediate),
+                                Java(Intermediate) , Kotlin(Basic)</li>
+                            <li><span>Others </span><br>MySQL </li>
+
+
+
+                        </ul>
+                    </div>
+
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>CS Undergrad </span><br>Currently in Third Year Computer Engineering </li>
+                            <li><span>ML Intern </span><br>Machine learning Intern At Suvidha Mahila Mandal </li>
+                            <li><span>Sr. Event Manager </span><br>Currently working as Senior Event Manager at Association Of Computer Engineers
+                            </li>
+                            <!-- <li><span>D </span><br>Solving DSA in CPP </li> -->
+
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2021-2025 </span><br>B.E. in Computer Engineering At Dr. D.Y.Patil Institute of
+                                Technology<br>First Year CGPA 9.87<br>Second Year CGPA 8.93</li>
+                            <li><span>2021 </span><br> HSC with 94%</li>
+                            <li><span>2019 </span><br> SSC with 90%</li>
+
+                            <!-- <li><span>D </span><br>Solving DSA in CPP </li> -->
+
+                        </ul>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="services">
+        <div class="container">
+            <h1 class="subtitle">My Interests</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>
+                        Web Design
+                    </h2>
+                    <p>
+                        I like to make various Interactive Web Designs
+
+                    </p>
+                    <a href="https://www.interaction-design.org/literature/topics/web-design">learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-globe"></i>
+                    <h2>
+                        BackEnd Services
+                    </h2>
+                    <p>
+                        I specialize in developing Backend APIs, Authentication & Authoriztion etc.
+
+                    </p>
+                    <a href="https://www.interaction-design.org/literature/topics/web-design">learn more</a>
+                </div>
+                <div>
+                    <i class="fa-solid fa-brain"></i>
+                    <h2>
+                        ML Projects
+                    </h2>
+                    <p>
+                        Currently learning Artificial Intelligence & Machine learning.
+                    </p>
+                    <a href="https://www.interaction-design.org/literature/topics/web-design">learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="subtitle">My Work</h1>
+            <div class="worklist">
+                <div class="work">
+                    <img src="images/complaint.jpg">
+                    <div class="layer">
+                        <h3>
+                            Student Complaint System
+                        </h3>
+                        <p>A MERN Stack WebApp for Tracking and Management of Complaint On Campus. All Features such as
+                            Authentication ,Token Generation etc. included.</p>
+                        <a href="https://ill-puce-rabbit-cape.cyclic.app/"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/delivery.jpg">
+                    <div class="layer">
+                        <h3>
+                            TiffinX Meals
+                        </h3>
+                        <p>A Business Oriented Solution to rresolve the problem of Meal Supply and Quality across Campus
+                        </p>
+                        <a href="https://github.com/omkarvasekar/Project2"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/machine.jpg">
+                    <div class="layer">
+                        <h3>
+                            Diabetes Predictor
+                        </h3>
+                        <p>A ML project based on the SVM Classifier which predicts diabetes in women</p>
+                        <a href="https://github.com/omkarvasekar/ML_Projects/blob/main/Diabetes_predictor.ipynb"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="subtitle">Contact Me</h1>
+                    <p><i class="fa-regular fa-envelope"></i>vasekaromkar@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>+91 8080245495</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100076509002806&mibextid=ZbWKwL"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="https://twitter.com/OmkarVasekar14?t=qBcCQo5Iq5i9e-tBxJhP3g&s=08"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://instagram.com/vasekar_omkar?igshid=OGQ5ZDc2ODk2ZA=="><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/omkar-vasekar-1a6130229"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2 ">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="copyright">
+            <p> Copyright &#9400; Omkar Vasekar.</p>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName('tab-contents');
+        function opentab(tab_name) {
+
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link")
+            document.getElementById(tab_name).classList.add("active-tab")
+
+
+        }
+
+
+        var sidemenu = document.getElementById("side-menu");
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw56ggLrPZ9GAalrgou8z6dkcUnLdnUzR428Y8-5xl3iMhvgA5HSu21qnOyMqjjAhPh/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML="Message sent Successfully!!!"
+                setTimeout(function(){
+                    msg.innerHTML=""
+                },5000);
+                form.reset();
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+
+</html>
