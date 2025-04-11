@@ -1,6 +1,8 @@
 
 import React from "react";
-import { Users, CalendarDays, Heart, Code } from "lucide-react";
+import { Users, CalendarDays, Heart, Code, Download } from "lucide-react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 const Activities = () => {
   const activities = [
@@ -26,26 +28,103 @@ const Activities = () => {
     },
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
   return (
     <section id="activities" className="py-20">
       <div className="section-container">
         <h2 className="section-heading">Leadership & Activities</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {activities.map((activity, index) => (
-            <div
-              key={index}
-              className="glass rounded-xl p-6 neu-shadow animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+        <div className="flex flex-col items-center mb-12">
+          <motion.div
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 0 20px rgba(147, 51, 234, 0.6)"
+            }}
+            className="inline-block"
+          >
+            <Button 
+              variant="default" 
+              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-6 rounded-xl font-bold shadow-lg flex items-center gap-2 h-auto"
+              onClick={() => window.open("/resume.pdf", "_blank")}
             >
-              <div className="flex items-center mb-4 text-secondary">
-                {activity.icon}
+              <Download className="w-5 h-5" />
+              Download Resume
+            </Button>
+          </motion.div>
+        </div>
+
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {activities.map((activity, index) => (
+            <motion.div
+              key={index}
+              className="glass rounded-xl p-6 neu-shadow relative overflow-hidden group"
+              variants={itemVariants}
+              whileHover={{ 
+                scale: 1.03,
+                transition: { duration: 0.2 }
+              }}
+            >
+              {/* Animated background gradient */}
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                initial={false}
+                animate={{ 
+                  background: [
+                    "linear-gradient(120deg, rgba(147, 51, 234, 0.1), rgba(79, 70, 229, 0.1))",
+                    "linear-gradient(240deg, rgba(147, 51, 234, 0.1), rgba(79, 70, 229, 0.1))",
+                    "linear-gradient(360deg, rgba(147, 51, 234, 0.1), rgba(79, 70, 229, 0.1))"
+                  ]
+                }}
+                transition={{ 
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 4
+                }}
+              />
+              <div className="flex items-center mb-4 text-secondary relative">
+                <motion.div 
+                  className="text-secondary"
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  {activity.icon}
+                </motion.div>
                 <h3 className="ml-3 text-xl font-bold text-foreground">{activity.title}</h3>
               </div>
-              <p className="text-muted-foreground">{activity.description}</p>
-            </div>
+              <p className="text-muted-foreground relative">{activity.description}</p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
