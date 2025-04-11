@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ArrowDownCircle, GitHub, Linkedin } from "lucide-react";
+import { ArrowDownCircle, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -45,7 +45,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              <GitHub className="h-6 w-6" />
+              <Github className="h-6 w-6" />
               <span className="sr-only">GitHub</span>
             </a>
             <a

@@ -3,8 +3,16 @@ import React from "react";
 import { Trophy, Star, Award, Code, PresentationIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const AchievementItem = ({ icon, title, description, className }) => (
-  <div className={cn("glass rounded-xl p-6 neu-shadow", className)}>
+interface AchievementItemProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+const AchievementItem = ({ icon, title, description, className, style }: AchievementItemProps) => (
+  <div className={cn("glass rounded-xl p-6 neu-shadow", className)} style={style}>
     <div className="flex items-center mb-4 text-secondary">
       {icon}
       <h3 className="ml-3 text-lg font-bold text-foreground">{title}</h3>
