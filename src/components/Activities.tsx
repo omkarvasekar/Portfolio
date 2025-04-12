@@ -13,12 +13,12 @@ const Activities = () => {
     },
     {
       icon: <CalendarDays className="h-6 w-6" />,
-      title: "Event Head for 'Avanetha'",
+      title: "Event Head for 'Acunetix'",
       description: "The largest technical fest which comprises of various events such as coding competitions and treasure hunts at college. Responsible for steady flow of the event, work delegation, crowd control, scheduling etc. (Feb 2024)",
     },
     {
       icon: <Heart className="h-6 w-6" />,
-      title: "Volunteer at Viva Maharashtra",
+      title: "Volunteer at Yuva Maharashtra",
       description: "An organization dedicated to community service and cultural heritage preservation. The volunteer work included cleanliness drives, food donation camps, organizing plays for promoting the local culture.",
     },
     {
