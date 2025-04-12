@@ -55,27 +55,7 @@ const Activities = () => {
       <div className="section-container">
         <h2 className="section-heading">Leadership & Activities</h2>
 
-        <div className="flex flex-col items-center mb-12">
-          <motion.div
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            whileHover={{ 
-              scale: 1.05,
-              boxShadow: "0 0 20px rgba(147, 51, 234, 0.6)"
-            }}
-            className="inline-block"
-          >
-            <Button 
-              variant="default" 
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-6 rounded-xl font-bold shadow-lg flex items-center gap-2 h-auto"
-              onClick={() => window.open("/resume.pdf", "_blank")}
-            >
-              <Download className="w-5 h-5" />
-              Download Resume
-            </Button>
-          </motion.div>
-        </div>
+        
 
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 gap-8"

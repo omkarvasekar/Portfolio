@@ -110,6 +110,7 @@ const NavBar = () => {
             </a>
           ))}
         </div>
+        
       </div>
     </nav>
   );
