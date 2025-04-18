@@ -45,7 +45,7 @@ const Hero = () => {
           size="lg"
           className="rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white"
           asChild
-          onClick={() => window.open("/resume.pdf", "_blank")}
+          onClick={() => window.open("resume.pdf", "_blank")}
         >
           <a href="#"><Download className="w-5 h-5" />Resume</a>
         </Button>
