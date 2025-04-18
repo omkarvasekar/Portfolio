@@ -87,10 +87,10 @@ const Contact = () => {
                 <div>
                   <h4 className="font-medium">Phone</h4>
                   <a 
-                    href="tel:+919080245495" 
+                    href="tel:+918080245495" 
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    +91 9080245495
+                    +91 8080245495
                   </a>
                 </div>
               </div>
@@ -109,7 +109,7 @@ const Contact = () => {
               
               <div className="pt-6 flex space-x-4">
                 <a
-                  href="https://github.com/"
+                  href="https://github.com/omkarvasekar"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-secondary/20 p-3 rounded-full hover:bg-secondary/30 transition-colors"
