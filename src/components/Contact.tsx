@@ -80,20 +80,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="bg-secondary/20 p-3 rounded-full">
-                  <Phone className="h-5 w-5 text-secondary" />
-                </div>
-                <div>
-                  <h4 className="font-medium">Phone</h4>
-                  <a 
-                    href="tel:+918080245495" 
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    +91 8080245495
-                  </a>
-                </div>
-              </div>
 
               <div className="flex items-start space-x-4">
                 <div className="bg-secondary/20 p-3 rounded-full">
