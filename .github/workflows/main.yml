@@ -3,7 +3,18 @@ name: Deploy React to GitHub Pages
 on:
   push:
     branches:
-      - main # name of the branch you are pushing to
+      - main 
+
+# Permissions must be at the top level or specific to the deploy job
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -11,29 +22,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: 'npm' # Added caching to make your builds faster
+
       - name: Install Dependencies
         run: npm ci
+
       - name: Build
         run: npm run build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist/.'
+          path: './dist' # Simplified path for Vite
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
-      url: 'https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/'
+      url: ${{ steps.deployment.outputs.page_url }} # Dynamically gets the URL
     steps:
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Deploy
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
