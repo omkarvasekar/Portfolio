@@ -18,13 +18,13 @@ export default function MorphingBlob({ side = 'right', scale = 1, className }: B
 
     const mount = mountRef.current;
     const baseSize = 500;
-    const containerSize = Math.min(baseSize * scale, window.innerWidth * 0.6);
+    const containerSize = Math.min(baseSize * scale, window.innerWidth * 0.8);
     // Render canvas 50% larger than container — overflow:hidden hides the edges
     const canvasSize = Math.round(containerSize * 1.5);
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-    camera.position.z = 6.0;
+    camera.position.z = 5.0;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(canvasSize, canvasSize);
