@@ -1,27 +1,43 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import './index.css';
+import SmoothScroll from './components/layout/SmoothScroll';
+import CustomCursor from './components/layout/CustomCursor';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+import HeroSection from './components/sections/HeroSection';
+import AboutSection from './components/sections/AboutSection';
+import TechStackSection from './components/sections/TechStackSection';
+import ProjectsSection from './components/sections/ProjectsSection';
+import ExperienceSection from './components/sections/ExperienceSection';
+import AchievementsSection from './components/sections/AchievementsSection';
+import ResearchSection from './components/sections/ResearchSection';
+import ContactSection from './components/sections/ContactSection';
 
-const queryClient = new QueryClient();
+export default function App() {
+  return (
+    <SmoothScroll>
+      {/* Scroll progress bar */}
+      <div id="scroll-progress" />
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter basename="/Portfolio">
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+      {/* Custom cursor (desktop only) */}
+      <CustomCursor />
 
-export default App;
+      {/* Navigation */}
+      <Navbar />
+
+      {/* Main content */}
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <TechStackSection />
+        <ProjectsSection />
+        <ExperienceSection />
+        <AchievementsSection />
+        <ResearchSection />
+        <ContactSection />
+      </main>
+
+      {/* Footer */}
+      <Footer />
+    </SmoothScroll>
+  );
+}
